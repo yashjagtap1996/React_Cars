@@ -1,38 +1,277 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar Component Start */
+#Navbar{
+  background-color: #2b2933;
+  position:sticky;
+  top:0;
+  z-index: 2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#Navbar ul{
+  list-style: none;
+  text-align:end;
+  padding: 0;
+  margin: 0;
+}
+#Navbar li{
+  display: inline-block;
+  margin-left: 2rem;
+}
+#Navbar a{
+  color:skyblue;
+  font-size: 2.5rem;
+  text-decoration: none;
+  line-height: 6rem;
+}
+#Navbar button{
+  font-size: 2rem;
+  color: blue;
+  background-color:blue;
 }
 
-.App-header {
-  background-color: #282c34;
+/* Navbar Component End */
+
+
+
+
+/* Header Component Start */
+#Header{
+  display: flex;
+  align-items: center;
   min-height: 100vh;
+}
+#Header img{
+  width: 100%;
+  height: 100%;
+}
+#Header h1{
+  font-size: 5rem;
+}
+#Header p{
+  font-size: 2rem;
+}
+/* Header Component End */
+
+
+
+/* Common Component Start */
+.Common{
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+.Common .left_image img{
+  width: 100%;
+  height: 80vh;
+}
+.Common .tag{
+  margin-top: 6.5rem;
+}
+.Common .tag{
+  position: relative;
+  min-height: 60vh;
+}
+.Common .tag img{
+  width: 30%;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -1;
+}
+.Common h1{
+  font-size: 4rem;
+  margin-left: 4rem;
+  margin-top: 8rem;
+}
+.Common p{
+  font-size: 2rem;
+  margin-top: 5rem;
+}
+/* Common Component End */
+
+
+
+/* Overview Component start */
+#Overview{
+  background-image: linear-gradient(-90deg, #cf84fb, #35ced0);
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+#Overview .summary_left h1{
+  font-size: 2.6rem;
+  font-weight:400;
+  color: azure;
+  line-height: 3.5rem;
+}
+#Overview .summary_right{
+  border-radius: 20rem 0 0 20rem;
+  background-color: white;
+  display: flex;
+}
+#Overview .summary_right h1{
+  font-size: 4rem;
+  align-self: center;
+  margin-left: 3rem;
+}
+/* Overview Component End */
+
+
+
+/* Gallery Component Start */
+.one{
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+.two{
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+.three{
+  grid-row: 2/3;
+  grid-column: span 2;
+}
+.five{
+  grid-row: 3/4;
+  grid-column: span 2;
+}
+.six{
+  grid-row:1/2;
+  grid-column:span 2;
+}
+#Gallery .Parent_Div{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,50vh);
+}
+#Gallery{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 200vh;
+}
+.gallery_heading{
+  background-color:skyblue;
+}
+#Gallery h1{
+  margin-top: 5rem;
+  font-size: 4rem;
+  margin-left: 5rem;
+  margin-top: 7rem;
+}
+#Gallery p{
+  font-size: 3rem;
+  margin-bottom: 5rem;
+  margin-left: 5rem;
+
+}
+/* Gallery Component End */
+
+
+
+/* Footer Component Start */
+#Footer{
+  background-color:#2b2933;
+}
+#Footer img{
+  width: 15%;
+}
+#Footer ul{
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+#Footer li{
+  display: inline-block;
+  margin:0 3rem;
+  font-size: 3rem;
+}
+/* Footer Component End */
+
+
+
+/* Media Query Start */
+
+@media (max-width:1200px){
+  html{
+    font-size: 55%;
+  }
+  .Common p{
+    margin-top: 2rem;
+  }
+  .Common .tag img{
+    width: 40%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width:768px){
+  .Common .tag img{
+    width: 30%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+  }
+  .Common .tag{
+    position: relative;
+    min-height: 30vh;
+  } 
+  .Common .left_image img{
+    width: 100%;
+    height: 50vh;
+  }
+  .Common p{
+    margin-top: 1rem;
+  }
+  .three{
+    grid-row: 2/3;
+    grid-column: span 1;
+  }
+  .five{
+    grid-row: 3/4;
+    grid-column: span 1;
+  }
+  .six{
+    grid-row:1/2;
+    grid-column:span 1;
+  }  
+
+  #Gallery .Parent_Div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,50vh);
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width:568px){
+  html{
+    font-size: 50%;
+  } 
+  .Common .tag img{
+    width: 45%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+  }   
+  #Gallery .Parent_Div{
+    display: flex;
+    flex-direction: column;
   }
 }
+
+
+
